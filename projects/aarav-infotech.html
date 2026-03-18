@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarav Infotech Case Study — Sushil Swain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--g1:#0a3d1f;--g2:#0f5c2e;--g3:#16a34a;--g4:#22c55e;--g5:#86efac;--g6:#dcfce7;--lime:#a3e635;--lime-dark:#84cc16;--white:#ffffff;--off:#f8fdf9;--dark:#061a0d;--text:#1a2e20;--muted:#4b7a5a;--border:#d1fae5;--shadow:0 4px 32px rgba(22,163,74,0.10);--shadow-lg:0 12px 48px rgba(22,163,74,0.18);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--text);overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Syne',sans-serif;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 6%;background:rgba(248,253,249,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--g1);text-decoration:none;}
+  .nav-logo span{color:var(--g3);}
+  .nav-back{display:inline-flex;align-items:center;gap:0.5rem;color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+  .nav-back:hover{color:var(--g3);}
+  .nav-cta{background:var(--g3);color:var(--white);padding:0.5rem 1.25rem;border-radius:100px;text-decoration:none;font-size:0.88rem;font-weight:600;}
+
+  /* HERO */
+  .cs-hero{padding:7rem 6% 4rem;background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 40%,#f0fdf4 100%);position:relative;overflow:hidden;}
+  .cs-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.15) 0%,transparent 70%);top:-150px;right:-100px;}
+  .cs-hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+  .cs-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--white);border:1px solid var(--g5);padding:0.4rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:600;color:var(--g2);margin-bottom:1.5rem;}
+  .cs-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;color:var(--dark);letter-spacing:-1.5px;margin-bottom:1rem;}
+  .cs-title span{color:var(--g3);}
+  .cs-subtitle{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:680px;font-weight:300;margin-bottom:2.5rem;}
+  .cs-meta{display:flex;flex-wrap:wrap;gap:1rem;}
+  .cs-meta-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:0.7rem 1.2rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;}
+  .cs-meta-item strong{color:var(--dark);font-weight:600;}
+  .cs-meta-item span{color:var(--muted);}
+
+  /* RESULTS BAR */
+  .results-bar{background:var(--g1);padding:2.5rem 6%;}
+  .results-bar-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;}
+  .rstat{text-align:center;}
+  .rstat-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--lime);line-height:1;}
+  .rstat-label{font-size:0.8rem;color:var(--g5);margin-top:0.4rem;}
+
+  /* SECTIONS */
+  .cs-section{padding:5rem 6%;border-bottom:1px solid var(--border);}
+  .cs-section:nth-child(even){background:var(--white);}
+  .cs-section-inner{max-width:900px;margin:0 auto;}
+  .cs-section-num{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;color:var(--g3);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;}
+  .cs-section-num::before{content:'';width:20px;height:2px;background:var(--g3);}
+  .cs-section-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:var(--dark);letter-spacing:-0.5px;margin-bottom:1.5rem;}
+  .cs-body{font-size:1rem;color:var(--muted);line-height:1.85;font-weight:300;}
+  .cs-body p{margin-bottom:1rem;}
+  .cs-body strong{color:var(--text);font-weight:600;}
+
+  /* PROBLEM STATS */
+  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
+  .problem-card{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:1.5rem;}
+  .problem-card.bad{border-color:#fecaca;background:#fff5f5;}
+  .problem-val{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:#ef4444;line-height:1;}
+  .problem-card.bad .problem-val{color:#dc2626;}
+  .problem-label{font-size:0.82rem;color:var(--muted);margin-top:0.3rem;}
+
+  /* WHAT I DID — STEPS */
+  .steps{display:flex;flex-direction:column;gap:1.2rem;margin:2rem 0;}
+  .step{display:flex;gap:1.2rem;align-items:flex-start;}
+  .step-num{min-width:36px;height:36px;border-radius:50%;background:var(--g3);color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:0.85rem;display:grid;place-items:center;flex-shrink:0;margin-top:2px;}
+  .step-content strong{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;color:var(--dark);display:block;margin-bottom:0.3rem;}
+  .step-content p{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+
+  /* TAGS */
+  .tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.5rem 0;}
+  .tag{font-size:0.78rem;font-weight:600;background:var(--g6);color:var(--g2);padding:0.3rem 0.8rem;border-radius:100px;}
+  .tag.dark{background:var(--g2);color:var(--white);}
+
+  /* SCREENSHOTS */
+  .screenshots-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
+  .screenshot-box{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);}
+  .screenshot-box img{width:100%;height:auto;display:block;}
+  .screenshot-label{padding:0.75rem 1rem;background:var(--white);font-size:0.8rem;font-weight:600;color:var(--muted);border-top:1px solid var(--border);display:flex;align-items:center;gap:0.4rem;}
+  .screenshot-label.before{border-left:3px solid #ef4444;}
+  .screenshot-label.after{border-left:3px solid var(--g3);}
+  .screenshot-placeholder{background:linear-gradient(135deg,var(--g6),#f0fdf4);min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:var(--muted);padding:2rem;text-align:center;}
+  .screenshot-placeholder .icon{font-size:2rem;}
+  .screenshot-placeholder p{font-size:0.82rem;line-height:1.5;}
+  .screenshot-placeholder strong{color:var(--g3);}
+
+  /* OUTCOMES */
+  .outcomes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin:2rem 0;}
+  .outcome-card{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:1.4rem;position:relative;overflow:hidden;}
+  .outcome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g3),var(--lime));}
+  .outcome-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--g2);line-height:1;}
+  .outcome-val.lime{color:var(--lime-dark);}
+  .outcome-label{font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.4;}
+  .outcome-change{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.75rem;font-weight:600;background:var(--g6);color:var(--g2);padding:0.2rem 0.6rem;border-radius:100px;margin-top:0.5rem;}
+
+  /* BACK CTA */
+  .back-cta{padding:4rem 6%;background:var(--g1);text-align:center;}
+  .back-cta h3{font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:0.8rem;}
+  .back-cta p{color:var(--g5);margin-bottom:1.8rem;font-size:0.95rem;}
+  .back-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-white{background:var(--white);color:var(--g2);padding:0.8rem 1.8rem;border-radius:100px;text-decoration:none;font-weight:700;font-size:0.9rem;transition:transform 0.2s;}
+  .btn-white:hover{transform:translateY(-2px);}
+  .btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.3);padding:0.8rem 1.8rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:border-color 0.2s,transform 0.2s;}
+  .btn-outline-white:hover{border-color:var(--g4);transform:translateY(-2px);}
+
+  footer{background:var(--dark);color:var(--muted);text-align:center;padding:2rem 6%;font-size:0.85rem;}
+  footer strong{color:var(--g4);}
+  footer a{color:var(--g4);text-decoration:none;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:700px){
+    .problem-grid,.screenshots-grid{grid-template-columns:1fr;}
+    .cs-meta{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Sushil<span>.</span></a>
+  <a class="nav-back" href="../index.html">← Back to Portfolio</a>
+  <a href="../index.html#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-badge">🏢 Case Study · B2B Service · Google Ads</div>
+    <h1 class="cs-title">Aarav Infotech India Pvt Ltd —<br><span>67% CPA Drop & 2367% Lead Growth</span></h1>
+    <p class="cs-subtitle">How I transformed a nearly dead Google Ads account generating 3 leads/month into a high-performing lead machine delivering 74 qualified leads/month — while cutting cost per conversion by 67%.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">🏢 <strong>Client:</strong> <span>Aarav Infotech India Pvt Ltd</span></div>
+      <div class="cs-meta-item">🎯 <strong>Goal:</strong> <span>Generate leads for website services</span></div>
+      <div class="cs-meta-item">📍 <strong>Target:</strong> <span>Pan India</span></div>
+      <div class="cs-meta-item">📢 <strong>Platform:</strong> <span>Google Ads</span></div>
+      <div class="cs-meta-item">⏱️ <strong>Duration:</strong> <span>Oct 2022 – Sept 2024</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <div class="results-bar-inner">
+    <div class="rstat"><div class="rstat-num">−67%</div><div class="rstat-label">Cost Per Conversion<br>₹824 → ₹271</div></div>
+    <div class="rstat"><div class="rstat-num">2367%</div><div class="rstat-label">Lead Volume Growth<br>3 → 74/month</div></div>
+    <div class="rstat"><div class="rstat-num">4</div><div class="rstat-label">Optimised Ad Groups<br>with landing pages</div></div>
+    <div class="rstat"><div class="rstat-num">tCPA</div><div class="rstat-label">Bidding Implemented<br>after 3-month data</div></div>
+  </div>
+</div>
+
+<!-- SECTION 1: BEFORE -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 01</div>
+    <h2 class="cs-section-title">🔴 The Situation Before I Stepped In</h2>
+    <div class="cs-body">
+      <p>When I took over the Aarav Infotech Google Ads account, it was generating just <strong>3 leads per month</strong> at a cost per conversion of <strong>₹824</strong>. The account was essentially on life support — burning budget with almost no measurable return.</p>
+      <p>The existing campaign was a single broad search campaign with no proper ad group structure, no audience segmentation, and no conversion tracking in place. Budget was being spent on irrelevant search terms, and there was no visibility into which regions, keywords, or landing pages were actually driving results.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card bad"><div class="problem-val">₹824</div><div class="problem-label">Cost Per Conversion (CPC)</div></div>
+      <div class="problem-card bad"><div class="problem-val">3/mo</div><div class="problem-label">Leads Generated Per Month</div></div>
+      <div class="problem-card"><div class="problem-val" style="color:var(--muted);">None</div><div class="problem-label">Audience Segmentation</div></div>
+      <div class="problem-card"><div class="problem-val" style="color:var(--muted);">Broad</div><div class="problem-label">Single Campaign, No Structure</div></div>
+    </div>
+    <div class="cs-section-title" style="font-size:1.1rem;margin-top:2rem;margin-bottom:1rem;">Before Screenshot</div>
+    <div class="screenshots-grid" style="grid-template-columns:1fr;">
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder">
+          <div class="icon">📸</div>
+          <p>Upload your <strong>before campaign screenshot</strong> here<br><em>(Aarav_Search_campaign_Oct_2022_to_Sept_2024_start.png)</em></p>
+        </div>
+        <div class="screenshot-label before">📉 Before — Campaign performance Oct 2022</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: WHAT I DID -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 02</div>
+    <h2 class="cs-section-title">🛠️ What I Did — Strategy & Execution</h2>
+    <div class="cs-body">
+      <p>I took a systematic, data-driven approach — starting with a full account audit and rebuilding the campaign architecture from scratch.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><strong>Region & Keyword Analysis</strong><p>Identified highly-converting regions (tier-2 and select tier-1 cities) using GA4 and search term reports. Focused budget on top-performing locations and removed wasted spend on low-intent regions.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><strong>Keyword Research & Search Term Optimisation</strong><p>Used Google Search Console, Keyword Planner, UberSuggest and Google Trends to identify high-CTR, high-intent keywords. Built a tight negative keyword list to eliminate irrelevant traffic.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><strong>Campaign Restructure — 4 Themed Ad Groups</strong><p>Grouped keywords by relevancy into 4 distinct ad groups, each with its own dedicated landing page. Applied Dynamic Keyword Insertion (DKI) in ad copies to improve Quality Score and CTR.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><strong>Bidding Strategy Progression</strong><p>Started with Maximise Clicks to gather data, then switched to Maximise Conversions, and finally implemented Target CPA (tCPA) bidding after 3 months of clean conversion data — significantly reducing CPA.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content"><strong>Ad Scheduling</strong><p>Analysed conversion data by day and hour. Scheduled ads to run only during high-converting windows, reducing wasted impressions during off-peak hours.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content"><strong>Landing Page Optimisation via GA4</strong><p>Analysed user journeys in GA4 — scroll depth, exit pages, CTA click-through. Recommended and implemented section changes and CTA repositioning on all 4 landing pages to improve conversion rates.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content"><strong>Conversion Tracking via GTM</strong><p>Set up and tested all conversion actions (form submits, calls, email clicks) through Google Tag Manager. Created dedicated GA4 tags to send conversion events as custom events for deeper funnel analysis.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">8</div>
+        <div class="step-content"><strong>Custom Audiences & Remarketing</strong><p>Identified customer signals and built custom audiences based on search keywords, past landing page visitors, and converters. Launched a Demand Gen remarketing campaign with multiple ad groups targeting each audience within a set frequency cap.</p></div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag dark">Google Search</span><span class="tag dark">Demand Gen</span><span class="tag dark">tCPA Bidding</span><span class="tag dark">GTM Tracking</span><span class="tag dark">GA4</span><span class="tag dark">DKI</span><span class="tag dark">Remarketing</span><span class="tag dark">Landing Page CRO</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: SCREENSHOTS -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 03</div>
+    <h2 class="cs-section-title">📸 Campaign Screenshots — Before & After</h2>
+    <div class="cs-body"><p>Side-by-side comparison of campaign performance metrics from the start and end of the engagement period.</p></div>
+    <div class="screenshots-grid">
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder">
+          <div class="icon">📸</div>
+          <p>Upload your <strong>before screenshot</strong><br><em>(Aarav_Search_campaign_Oct_2022_to_Sept_2024_start.png)</em></p>
+        </div>
+        <div class="screenshot-label before">📉 Before — High CPA, Low Volume</div>
+      </div>
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder">
+          <div class="icon">📸</div>
+          <p>Upload your <strong>after screenshot</strong><br><em>(Aarav_Search_campaign_Oct_2022_to_Sept_2024_end.png)</em></p>
+        </div>
+        <div class="screenshot-label after">📈 After — ₹271 CPA, 74 Leads/Month</div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:var(--muted);margin-top:1rem;">💡 <strong>How to add screenshots:</strong> Upload your image files to the <code>projects/images/</code> folder on GitHub, then replace the placeholder divs with <code>&lt;img src="images/your-file.png" alt="..."&gt;</code></p>
+  </div>
+</div>
+
+<!-- SECTION 4: OUTCOMES -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 04</div>
+    <h2 class="cs-section-title">🟢 Outcomes & Results</h2>
+    <div class="cs-body">
+      <p>The systematic restructure and continuous optimisation delivered dramatic results over the 2-year engagement. The account went from barely functional to a consistent, scalable lead generation engine.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card"><div class="outcome-val">−67%</div><div class="outcome-label">Cost Per Conversion</div><div class="outcome-change">₹824 → ₹271</div></div>
+      <div class="outcome-card"><div class="outcome-val lime">74</div><div class="outcome-label">Monthly Leads (Peak)</div><div class="outcome-change">from 3/month</div></div>
+      <div class="outcome-card"><div class="outcome-val">2367%</div><div class="outcome-label">Lead Volume Growth</div><div class="outcome-change">↑ Sustained</div></div>
+      <div class="outcome-card"><div class="outcome-val">4×</div><div class="outcome-label">Landing Pages Optimised</div><div class="outcome-change">with dedicated ad groups</div></div>
+    </div>
+    <div class="cs-body" style="margin-top:1.5rem;">
+      <p><strong>Key takeaway:</strong> By combining structural improvements (ad group segmentation, negative keywords, landing page alignment) with data-driven bidding progression and remarketing, we turned a ₹824 CPA account into a ₹271 CPA lead engine — proving that smart optimisation beats budget increases every time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BACK CTA -->
+<div class="back-cta">
+  <h3>Interested in Similar Results?</h3>
+  <p>Let's talk about how I can help your business grow with paid ads.</p>
+  <div class="back-cta-btns">
+    <a href="../index.html#contact" class="btn-white">Get In Touch</a>
+    <a href="../index.html#work" class="btn-outline-white">← View All Projects</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <strong>Sushil Swain</strong> · <a href="mailto:textsushil@gmail.com">textsushil@gmail.com</a></p>
+</footer>
+
+<script>
+  const reveals=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver((e)=>{e.forEach((r,i)=>{if(r.isIntersecting){setTimeout(()=>r.target.classList.add('visible'),i*100);obs.unobserve(r.target);}});},{threshold:0.1});
+  reveals.forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
