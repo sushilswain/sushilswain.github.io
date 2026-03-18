@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajeets Manpower Case Study — Sushil Swain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--g1:#0a3d1f;--g2:#0f5c2e;--g3:#16a34a;--g4:#22c55e;--g5:#86efac;--g6:#dcfce7;--lime:#a3e635;--lime-dark:#84cc16;--white:#ffffff;--off:#f8fdf9;--dark:#061a0d;--text:#1a2e20;--muted:#4b7a5a;--border:#d1fae5;--shadow:0 4px 32px rgba(22,163,74,0.10);--shadow-lg:0 12px 48px rgba(22,163,74,0.18);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--text);overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Syne',sans-serif;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 6%;background:rgba(248,253,249,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--g1);text-decoration:none;}
+  .nav-logo span{color:var(--g3);}
+  .nav-back{display:inline-flex;align-items:center;gap:0.5rem;color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+  .nav-back:hover{color:var(--g3);}
+  .nav-cta{background:var(--g3);color:var(--white);padding:0.5rem 1.25rem;border-radius:100px;text-decoration:none;font-size:0.88rem;font-weight:600;}
+  .cs-hero{padding:7rem 6% 4rem;background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 40%,#f0fdf4 100%);position:relative;overflow:hidden;}
+  .cs-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.15) 0%,transparent 70%);top:-150px;right:-100px;}
+  .cs-hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2;}
+  .cs-badge{display:inline-flex;align-items:center;gap:0.5rem;background:var(--white);border:1px solid var(--g5);padding:0.4rem 1rem;border-radius:100px;font-size:0.82rem;font-weight:600;color:var(--g2);margin-bottom:1.5rem;}
+  .cs-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;color:var(--dark);letter-spacing:-1.5px;margin-bottom:1rem;}
+  .cs-title span{color:var(--g3);}
+  .cs-subtitle{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:680px;font-weight:300;margin-bottom:2.5rem;}
+  .cs-meta{display:flex;flex-wrap:wrap;gap:1rem;}
+  .cs-meta-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:0.7rem 1.2rem;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;}
+  .cs-meta-item strong{color:var(--dark);font-weight:600;}
+  .cs-meta-item span{color:var(--muted);}
+  .results-bar{background:var(--g1);padding:2.5rem 6%;}
+  .results-bar-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:2rem;}
+  .rstat{text-align:center;}
+  .rstat-num{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--lime);line-height:1;}
+  .rstat-label{font-size:0.8rem;color:var(--g5);margin-top:0.4rem;}
+  .cs-section{padding:5rem 6%;border-bottom:1px solid var(--border);}
+  .cs-section:nth-child(even){background:var(--white);}
+  .cs-section-inner{max-width:900px;margin:0 auto;}
+  .cs-section-num{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;color:var(--g3);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;}
+  .cs-section-num::before{content:'';width:20px;height:2px;background:var(--g3);}
+  .cs-section-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:var(--dark);letter-spacing:-0.5px;margin-bottom:1.5rem;}
+  .cs-body{font-size:1rem;color:var(--muted);line-height:1.85;font-weight:300;}
+  .cs-body p{margin-bottom:1rem;}
+  .cs-body strong{color:var(--text);font-weight:600;}
+  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
+  .problem-card{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:1.5rem;}
+  .problem-card.bad{border-color:#fecaca;background:#fff5f5;}
+  .problem-val{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--muted);line-height:1;}
+  .problem-card.bad .problem-val{color:#dc2626;}
+  .problem-label{font-size:0.82rem;color:var(--muted);margin-top:0.3rem;}
+  .steps{display:flex;flex-direction:column;gap:1.2rem;margin:2rem 0;}
+  .step{display:flex;gap:1.2rem;align-items:flex-start;}
+  .step-num{min-width:36px;height:36px;border-radius:50%;background:var(--g3);color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:0.85rem;display:grid;place-items:center;flex-shrink:0;margin-top:2px;}
+  .step-content strong{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;color:var(--dark);display:block;margin-bottom:0.3rem;}
+  .step-content p{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.5rem 0;}
+  .tag{font-size:0.78rem;font-weight:600;background:var(--g6);color:var(--g2);padding:0.3rem 0.8rem;border-radius:100px;}
+  .tag.dark{background:var(--g2);color:var(--white);}
+  .screenshots-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
+  .screenshot-box{border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);}
+  .screenshot-box img{width:100%;height:auto;display:block;}
+  .screenshot-label{padding:0.75rem 1rem;background:var(--white);font-size:0.8rem;font-weight:600;color:var(--muted);border-top:1px solid var(--border);display:flex;align-items:center;gap:0.4rem;}
+  .screenshot-label.before{border-left:3px solid #ef4444;}
+  .screenshot-label.after{border-left:3px solid var(--g3);}
+  .screenshot-placeholder{background:linear-gradient(135deg,var(--g6),#f0fdf4);min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:var(--muted);padding:2rem;text-align:center;}
+  .screenshot-placeholder .icon{font-size:2rem;}
+  .screenshot-placeholder p{font-size:0.82rem;line-height:1.5;}
+  .screenshot-placeholder strong{color:var(--g3);}
+  .outcomes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin:2rem 0;}
+  .outcome-card{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:1.4rem;position:relative;overflow:hidden;}
+  .outcome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g3),var(--lime));}
+  .outcome-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--g2);line-height:1;}
+  .outcome-val.lime{color:var(--lime-dark);}
+  .outcome-label{font-size:0.8rem;color:var(--muted);margin-top:0.4rem;line-height:1.4;}
+  .outcome-change{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.75rem;font-weight:600;background:var(--g6);color:var(--g2);padding:0.2rem 0.6rem;border-radius:100px;margin-top:0.5rem;}
+  .back-cta{padding:4rem 6%;background:var(--g1);text-align:center;}
+  .back-cta h3{font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:0.8rem;}
+  .back-cta p{color:var(--g5);margin-bottom:1.8rem;font-size:0.95rem;}
+  .back-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-white{background:var(--white);color:var(--g2);padding:0.8rem 1.8rem;border-radius:100px;text-decoration:none;font-weight:700;font-size:0.9rem;transition:transform 0.2s;}
+  .btn-white:hover{transform:translateY(-2px);}
+  .btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.3);padding:0.8rem 1.8rem;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:border-color 0.2s,transform 0.2s;}
+  .btn-outline-white:hover{border-color:var(--g4);transform:translateY(-2px);}
+  footer{background:var(--dark);color:var(--muted);text-align:center;padding:2rem 6%;font-size:0.85rem;}
+  footer strong{color:var(--g4);}
+  footer a{color:var(--g4);text-decoration:none;}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:700px){.problem-grid,.screenshots-grid{grid-template-columns:1fr;}.cs-meta{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">Sushil<span>.</span></a>
+  <a class="nav-back" href="../index.html">← Back to Portfolio</a>
+  <a href="../index.html#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-badge">🌍 Case Study · B2B Recruitment · Google Ads</div>
+    <h1 class="cs-title">Ajeets Manpower & Recruitment —<br><span>18% ROAS Growth for Gulf & EU Markets</span></h1>
+    <p class="cs-subtitle">How I built a structured, multi-region Google Search campaign from the ground up for an international manpower recruitment agency targeting Gulf nations and select EU countries — driving ROAS growth and a 12% CPA reduction.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">🏢 <strong>Client:</strong> <span>Ajeets Manpower & Recruitment Agency</span></div>
+      <div class="cs-meta-item">🎯 <strong>Goal:</strong> <span>Generate manpower requirement leads</span></div>
+      <div class="cs-meta-item">📍 <strong>Target:</strong> <span>Gulf Nations + Select EU Countries</span></div>
+      <div class="cs-meta-item">📢 <strong>Platform:</strong> <span>Google Ads</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="results-bar">
+  <div class="results-bar-inner">
+    <div class="rstat"><div class="rstat-num">+18%</div><div class="rstat-label">ROAS Growth<br>After Optimisation</div></div>
+    <div class="rstat"><div class="rstat-num">−12%</div><div class="rstat-label">CPA Reduction<br>Achieved</div></div>
+    <div class="rstat"><div class="rstat-num">Multi</div><div class="rstat-label">Region Campaigns<br>Gulf + EU</div></div>
+    <div class="rstat"><div class="rstat-num">tCPA</div><div class="rstat-label">Bidding After<br>3-Month Data</div></div>
+  </div>
+</div>
+
+<!-- SECTION 1: BEFORE -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 01</div>
+    <h2 class="cs-section-title">🔴 The Situation Before</h2>
+    <div class="cs-body">
+      <p>Ajeets Manpower needed a Google Ads presence to generate qualified leads from businesses in Gulf nations (UAE, Saudi Arabia, Qatar, Kuwait, Oman, Bahrain) and selected EU countries looking to hire manpower through their agency.</p>
+      <p>There was <strong>no structured campaign in place</strong>. The account needed to be built from the ground up with the right geographic segmentation, keyword strategy, and bidding approach. The challenge was targeting high-intent decision-makers across multiple international markets with very different search behaviors and competition levels.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card bad"><div class="problem-val">New</div><div class="problem-label">No Existing Campaign Structure</div></div>
+      <div class="problem-card bad"><div class="problem-val">Multi</div><div class="problem-label">Complex Multi-Region Targeting Required</div></div>
+      <div class="problem-card"><div class="problem-val" style="color:var(--muted);">Zero</div><div class="problem-label">Historical Data to Work From</div></div>
+      <div class="problem-card"><div class="problem-val" style="color:var(--muted);">High</div><div class="problem-label">Competition in Recruitment Keywords</div></div>
+    </div>
+    <div class="screenshots-grid" style="grid-template-columns:1fr;">
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder"><div class="icon">📸</div><p>Upload your <strong>before/initial campaign screenshot</strong> here</p></div>
+        <div class="screenshot-label before">📉 Before — Baseline / Starting Point</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: WHAT I DID -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 02</div>
+    <h2 class="cs-section-title">🛠️ What I Did — Strategy & Execution</h2>
+    <div class="cs-body"><p>The approach was to build a clean, geo-segmented campaign architecture that would allow precise budget control per region and clear performance visibility by market.</p></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><strong>Region-Based Campaign Separation</strong><p>Set up separate Google Search Ad campaigns for each major region — Gulf nations (UAE, Saudi, Qatar, Kuwait, Oman, Bahrain) and selected EU countries. This allowed individual budget control, bid adjustments, and performance tracking per market.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><strong>Keyword Clustering by Region & Service</strong><p>Researched and grouped keywords based on both geographic intent and recruitment service type (skilled workers, blue-collar, white-collar). Created separate ad groups within each campaign for keyword-to-ad relevancy.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><strong>Search Term Optimisation</strong><p>Continuously monitored search term reports after launch. Built and refined negative keyword lists to cut irrelevant traffic. Identified and promoted high-converting search terms as exact match keywords.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><strong>Bidding Strategy Progression</strong><p>Launched with Maximise Clicks to gather 3 months of clean conversion data across all regions. After sufficient data, implemented Target CPA (tCPA) bidding — allowing Google's algorithm to optimise for leads at the lowest possible cost.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content"><strong>Landing Page Alignment</strong><p>Worked with the client to ensure landing pages were aligned with each region's ad messaging and search intent. Suggested copy and CTA adjustments based on regional conversion data.</p></div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag dark">Google Search</span><span class="tag dark">Geo Targeting</span><span class="tag dark">tCPA Bidding</span><span class="tag dark">Keyword Clustering</span><span class="tag dark">Negative Keywords</span><span class="tag dark">Multi-Region</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: SCREENSHOTS -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 03</div>
+    <h2 class="cs-section-title">📸 Campaign Screenshots</h2>
+    <div class="cs-body"><p>Performance data showing ROAS growth and CPA improvements after the structured campaign build and tCPA implementation.</p></div>
+    <div class="screenshots-grid">
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder"><div class="icon">📸</div><p>Upload your <strong>before screenshot</strong> here</p></div>
+        <div class="screenshot-label before">📉 Before — Initial Performance</div>
+      </div>
+      <div class="screenshot-box">
+        <div class="screenshot-placeholder"><div class="icon">📸</div><p>Upload your <strong>after screenshot</strong> here</p></div>
+        <div class="screenshot-label after">📈 After — +18% ROAS, −12% CPA</div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:var(--muted);margin-top:1rem;">💡 Upload images to the <code>projects/images/</code> folder on GitHub and replace the placeholder with an <code>&lt;img&gt;</code> tag.</p>
+  </div>
+</div>
+
+<!-- SECTION 4: OUTCOMES -->
+<div class="cs-section">
+  <div class="cs-section-inner reveal">
+    <div class="cs-section-num">Section 04</div>
+    <h2 class="cs-section-title">🟢 Outcomes & Results</h2>
+    <div class="cs-body"><p>The structured multi-region approach with data-driven bidding progression delivered consistent improvements in both efficiency and lead quality.</p></div>
+    <div class="outcomes-grid">
+      <div class="outcome-card"><div class="outcome-val">+18%</div><div class="outcome-label">ROAS Growth</div><div class="outcome-change">↑ After tCPA</div></div>
+      <div class="outcome-card"><div class="outcome-val lime">−12%</div><div class="outcome-label">CPA Reduction</div><div class="outcome-change">↓ Lower Cost</div></div>
+      <div class="outcome-card"><div class="outcome-val">6+</div><div class="outcome-label">Regions Targeted</div><div class="outcome-change">Gulf + EU</div></div>
+      <div class="outcome-card"><div class="outcome-val">Clean</div><div class="outcome-label">Campaign Architecture</div><div class="outcome-change">Scalable Structure</div></div>
+    </div>
+    <div class="cs-body" style="margin-top:1.5rem;">
+      <p><strong>Key takeaway:</strong> Building a properly segmented multi-region campaign from scratch — with the discipline to collect data before switching to tCPA — is what drove the ROAS and CPA improvements. Patience and structure beat aggressive early bidding in complex international markets.</p>
+    </div>
+  </div>
+</div>
+
+<div class="back-cta">
+  <h3>Want Similar Results for Your Business?</h3>
+  <p>Let's build a campaign structure that scales.</p>
+  <div class="back-cta-btns">
+    <a href="../index.html#contact" class="btn-white">Get In Touch</a>
+    <a href="../index.html#work" class="btn-outline-white">← View All Projects</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <strong>Sushil Swain</strong> · <a href="mailto:textsushil@gmail.com">textsushil@gmail.com</a></p>
+</footer>
+
+<script>
+  const reveals=document.querySelectorAll('.reveal');
+  const obs=new IntersectionObserver((e)=>{e.forEach((r,i)=>{if(r.isIntersecting){setTimeout(()=>r.target.classList.add('visible'),i*100);obs.unobserve(r.target);}});},{threshold:0.1});
+  reveals.forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
