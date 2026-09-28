@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Query Intelligence System — Sushil Swain</title>
+  <meta name="description" content="A human-governed Google Ads search-query system built by Sushil Swain, with AI-assisted review, live checks and an auditable action trail.">
+  <link rel="canonical" href="https://sushilswain.github.io/projects/search-query-intelligence.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Search Query Intelligence System — Sushil Swain">
+  <meta property="og:description" content="A governed workflow from disclosed search terms to approved Google Ads actions.">
+  <meta property="og:url" content="https://sushilswain.github.io/projects/search-query-intelligence.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="header-inner wrap" aria-label="Main navigation"><a class="brand" href="/" aria-label="Sushil Swain home">Sushil<span>.</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button><ul class="nav-list" id="nav-list"><li><a href="/index.html#work">Work</a></li><li><a href="/index.html#capabilities">Capabilities</a></li><li><a href="/index.html#experience">Experience</a></li><li><a href="/index.html#about">About</a></li><li><a class="nav-contact" href="/index.html#contact">Contact</a></li></ul></nav></header>
+
+  <main id="main">
+    <section class="case-hero"><div class="narrow"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/index.html#work">Work</a> / Search Query Intelligence System</nav><p class="eyebrow">Growth operations · Search automation</p><h1>Search Query Intelligence System</h1><p class="lede">A governed workflow for Google Ads search terms: collect visible queries, prepare recommendations, require human approval, check the live account again and record the outcome.</p><ul class="meta-list"><li>Role: System architect and implementation owner</li><li>Google Ads Scripts, Sheets and AI-assisted review</li><li>August–September 2026</li></ul></div></section>
+
+    <section class="metric-band" aria-label="System evidence"><div class="narrow metric-grid"><div class="metric"><strong>Live</strong><span>Collector and executor successful · 27 Sep 2026</span></div><div class="metric"><strong>9</strong><span>Applied actions in the system ledger · 27 Sep 2026</span></div><div class="metric"><strong>42/42</strong><span>Executor regression checks passed; 9/9 collector checks also passed</span></div></div></section>
+
+    <section class="case-section" aria-labelledby="problem"><div class="narrow"><p class="eyebrow">01 · Problem</p><h2 id="problem">A bad negative can hide good demand</h2><p>A search term can be irrelevant to one campaign but valuable to another integration use case. Applying negatives from a loose classification risks blocking the right buyer. As the account grew, every proposed change needed context, an approval decision and a traceable record.</p><p>Google Ads discloses only part of Search activity. One August account snapshot showed disclosed terms covering 12 of 61 clicks. The workflow therefore acts only on what it can see and check.</p></div></section>
+
+    <section class="case-section" aria-labelledby="workflow"><div class="narrow"><p class="eyebrow">02 · Design</p><h2 id="workflow">A recommendation never applies itself</h2><ol class="flow"><li>Collect disclosed search terms</li><li>Prepare a recommendation</li><li>Human approves a specific action</li><li>Recheck, apply and log</li></ol><p>A scheduled Google Ads Script writes queries and account context to a shared ledger. AI-assisted review proposes KEEP, WATCH, NEGATIVE or ROUTE. It has no direct Google Ads credential path. A human accepts the proposed row; one executor pass binds the approved recommendation without changing Ads. A later pass may apply it only after fresh checks.</p><div class="callout"><p>If approval, target or account context is stale or invalid, the executor records the stop and makes no Ads change.</p></div></div></section>
+
+    <section class="case-section" aria-labelledby="safeguards"><div class="narrow"><p class="eyebrow">03 · Safeguards</p><h2 id="safeguards">Controls at the point of action</h2><div class="grid-2"><article class="card"><h3>Specific approval</h3><p>The reviewed action is fingerprinted. A changed or stale approval cannot silently become a different account action.</p></article><article class="card"><h3>Fresh account checks</h3><p>The executor rechecks target status, conversion protection, negative overlap and routing destination immediately before mutation.</p></article><article class="card"><h3>Limited scope</h3><p>Exact-match negatives are the constrained default. Automated broad, shared-list and account-level negative execution are disabled.</p></article><article class="card"><h3>Recorded outcomes</h3><p>The ledger and change log preserve applied, skipped and no-action outcomes so a decision can be reviewed later.</p></article></div></div></section>
+
+    <section class="case-section" aria-labelledby="testing"><div class="narrow"><p class="eyebrow">04 · Testing</p><h2 id="testing">Proving the workflow before scaling it</h2><p>Production acceptance used a dry run, one controlled live exact negative, independent recollection of that negative and an idempotency rerun that did not repeat the action. The later audit hardened approval, routing, recovery and collector behavior.</p><p>Regression checks passed <strong>42/42</strong> for the executor and <strong>9/9</strong> for collector hardening. A real September data-type mismatch invalidated approval fingerprints; the scheduled executor failed closed and made no Ads change in that event. The reviewed rows were repaired and human approvals rebound before execution resumed.</p></div></section>
+
+    <section class="case-section" aria-labelledby="result"><div class="narrow"><p class="eyebrow">05 · Result</p><h2 id="result">A working decision and execution system</h2><p>On 27 September, the live control sheet reported successful collector and executor runs, data collected through 26 September and <strong>9 applied actions</strong> in the system ledger. The result is an operating workflow with human authority, fresh checks and a recorded action trail.</p><p>The next outcome question is whether these decisions improve qualified demand or reduce review time. Those downstream effects have not yet been established with a measured comparison.</p></div></section>
+
+    <section class="case-section" aria-labelledby="learning"><div class="narrow"><p class="eyebrow">06 · Learning</p><h2 id="learning">The important design decision was authority</h2><p>Classification helps prepare a decision. A dependable system also needs to know who approved it, whether the context changed and what actually happened in Ads. Treating a failed check as an explicit outcome made the workflow easier to trust and repair.</p></div></section>
+
+    <section class="case-section next-case"><div class="narrow"><p class="eyebrow">Related project</p><h2>APPSeCONNECT paid growth</h2><p>See the Search campaign and MQL case that this system supports.</p><a class="button primary" href="appseconnect.html">View the case study</a></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Sushil Swain</span><a href="mailto:textsushil@gmail.com">textsushil@gmail.com</a></div></footer>
+</body>
+</html>
